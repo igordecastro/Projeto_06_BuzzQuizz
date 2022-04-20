@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+body {
+    background-color:#FAFAFA;
+    ;
+    font-family: 'Roboto', sans-serif;
+}
+
+header {
+    position: fixed;
+    background-color: #EC362D;
+    width: 100%;
+    left: 0;
+    top: 0;
+    height: 69px;
+}
+
+header > h1 {
+    display: flex;
+    margin-top: 16px;
+    justify-content: center;
+    color: #FFFFFF;
+    font-size: 37px;
+    font-weight: 700;
+}
+
+.nenhum-quizz {
+    background-color: #FAFAFA;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 215px auto 0 auto;
+    width: 66%;
+    height: 181px;
+    border: dashed 1px #D4D4D4;
+}
+.nenhum-quizz > p {
+    color: #B9B9B9; 
+    display: flex;
+    text-align: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 33%;
+}
+
+.nenhum-quizz button {
+    margin-top: 3%;
+    color: #EC362D;
+    background-color: #FAFAFA;
+    border: dashed 1px #EC362D;
+    border-radius: 50px;
+    width: 151px;
+    height: 40px;
+}
+
+.escondido {
+    display: none;
+}
+
+.cabecalho-seus-quizzes {
+    margin-top: 69px;
+    display: flex;
+    align-items: center;
+}
+
+.cabecalho-seus-quizzes p{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.cabecalho-seus-quizzes ion-icon{
+    width: 31px;
+    height: 30px;
+    color: #EC362D;
+}
