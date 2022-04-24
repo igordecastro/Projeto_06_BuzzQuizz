@@ -2,7 +2,10 @@
 
 body {
     background-color:#FAFAFA;
-    ;
+    font-family: 'Roboto', sans-serif;
+}
+
+body div {
     font-family: 'Roboto', sans-serif;
 }
 
@@ -54,10 +57,6 @@ header > h1 {
     height: 40px;
 }
 
-.escondido {
-    display: none;
-}
-
 .cabecalho-seus-quizzes {
     margin-top: 69px;
     display: flex;
@@ -74,6 +73,7 @@ header > h1 {
     height: 30px;
     color: #EC362D;
 }
+<<<<<<< HEAD
 /*Estilos para os quizzes*/
 .listadequizzes{
     width: 66%;
@@ -231,3 +231,62 @@ header > h1 {
         margin-left: 390.93px;
     }
 /*fim para tela de um quizz*/
+=======
+
+.criacao-informacoes {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    margin-top: 140px;
+}
+
+.criacao-informacoes > h3 {
+    font-size: 23px;
+    font-weight: bold;
+}
+
+.perguntas-basicas {
+    margin: 0 auto;
+    background-color: #FFFFFF;
+    margin-top: 27px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 600px;
+    height: 256px;
+}
+
+.perguntas-basicas > input {
+    margin-bottom: 9px;
+    width: 564px;
+    height: 46px;
+    border-radius: 5px;
+    border: 1px solid #D1D1D1;
+}
+
+.perguntas-basicas > input:last-child{
+    margin-bottom: 0;
+}
+.perguntas-basicas > input::placeholder{
+    font-style: italic;
+    font-size: 19px;
+    margin-left: 23px;
+    color: #BABABA;
+}
+
+.criacao-informacoes > button {
+    margin: 85px auto 0 auto;
+    font-size: 21px;
+    width: 368px;
+    height: 54px;
+    background-color: #EC362D;
+    color: #FFFFFF;
+    border-radius: 15px;
+}
+
+.escondido {
+    display: none;
+}
+>>>>>>> d2832c3e39d85a49b5fc3808bb08917389b3c780
