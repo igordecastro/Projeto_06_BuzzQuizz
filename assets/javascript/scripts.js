@@ -5,11 +5,16 @@ function criarQuizz() {
 
     botao = document.querySelector(".nenhum-quizz");
     botao.classList.add("escondido");
-<<<<<<< HEAD
     //depois de criar a página de criação fazer com que ela apareça nessa função
+    paginaCriacao1.classList.remove("escondido");
+
+    /*~Anelize*/
+    let listaquizzes = document.querySelector(".listadequizzes");
+    listaquizzes.classList.add("escondido");
+    /*~Anelize*/
 }
 //
-//FUNÇÃO QUE MUDA A PÁGINA AO CLICAR NO QUIZZ//
+//FUNÇÃO QUE MUDA A PÁGINA AO CLICAR NO QUIZZ-o click em em quizz que já existe encaminha o usuário para próxima página//
 function mudar_pagina() {
     //aqui tiramos as divs da página
     let parteum = document.querySelector(".nenhum-quizz");
@@ -27,14 +32,8 @@ function mudar_pagina() {
     partequatro.classList.remove("escondido");
 
     let partecinco = document.querySelector(".caixa-de-respostas");
-    partecinco.classList.remove("escondido");
-
-
-
-
-=======
+    partecinco.classList.remove("escondido");  
     
-    paginaCriacao1.classList.remove("escondido");
 }
 
 function ehValido(){
@@ -69,5 +68,4 @@ function validaCriacao() {
     } else {
         alert("Preencha os dados corretamente");
     }
->>>>>>> d2832c3e39d85a49b5fc3808bb08917389b3c780
 }

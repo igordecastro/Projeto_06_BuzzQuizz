@@ -73,7 +73,6 @@ header > h1 {
     height: 30px;
     color: #EC362D;
 }
-<<<<<<< HEAD
 /*Estilos para os quizzes*/
 .listadequizzes{
     width: 66%;
@@ -231,8 +230,6 @@ header > h1 {
         margin-left: 390.93px;
     }
 /*fim para tela de um quizz*/
-=======
-
 .criacao-informacoes {
     display: flex;
     flex-direction: column;
@@ -289,4 +286,3 @@ header > h1 {
 .escondido {
     display: none;
 }
->>>>>>> d2832c3e39d85a49b5fc3808bb08917389b3c780
