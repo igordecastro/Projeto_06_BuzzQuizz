@@ -65,7 +65,7 @@ function ehInformacaoValida(){
     return false;
 }
 
-let padrao = /[#][0-9a-f]+/i;
+let padrao = /[#][0-9a-f]+/i; /* regex usado pra verificar se o número é hexadecimal*/
 let exemplo = "#A12F65";
 let resultado = exemplo.match(padrao);
 
@@ -79,6 +79,13 @@ let respostaIncorreta3 = [];
 let urlResposta = [];
 
 function ehPerguntaValida() {
+    /* FAZ A COMPARAÇÃO DAS PERGUNTAS COM REQUISITOS 
+se texto da pergunta tem no minimo 20 caracteres e
+se a cor está em hexadecimal e
+se o texto não está vazio  e
+se existe pelo menos uma resposta correta e outra incorreta e por fim
+faz a verificação se o link é imagem
+*/
     for(let i = 0; i< qtdPerguntas; i++){
         if( textoPergunta[i].length >= 20 && respostaCorreta !== [] && (respostaIncorreta1 !== [] || respostaIncorreta2 !== []|| respostaIncorreta3 !== []) &&
              corPergunta[i].match(padrao) !== null &&
@@ -124,7 +131,7 @@ function ehNivelValido(){
 /* FUNÇÃO DO BOTÃO QUE VALIDA INFORMAÇÕES 
     ao clicar verifica se as informações para criação do quizz atende os requisitos */
 function validaCriacao() {
-    console.log(paginaCriacao2);
+
     if (ehInformacaoValida()) {
         paginaCriacao1.classList.add("escondido");
         paginaCriacao2.classList.remove("escondido");
@@ -158,6 +165,8 @@ function insereNiveis() {
 }
 
 function inserePerguntas() {
+    /*     FUNÇÃO QUE INSERE PERGUNTAS CONFORME ESPECIFICADO PELO USUARIO
+            adiciona divs das perguntas no html */
     const perguntas = document.querySelector(".seriePerguntas");
     perguntas.innerHTML = '';
     for (let i = 0; i < qtdPerguntas; i++) {
@@ -206,12 +215,17 @@ function validaNiveis() {
 
     if (result === true) {
         paginaNiveis.classList.add("escondido");
+        enviarQuizz();
+        finalizaQuizz();
+        console.log(quizzPronto);
     } else {
         alert("Preencha os dados corretamente");
     }
 }
 
 function validaPerguntas() {
+     /*FUNÇÃO QUE FAZ A VALIDAÇÃO DAS PERGUNTAS CONFORME REQUISITOS
+        funcão chamada no botao de prosseguir para criação dos níveis, verifica se todas as informações atenderam os requisitos de criação das perguntas*/
     for (let i = 0; i < qtdPerguntas; i++) {
         textoPergunta[i] = document.querySelector(`.texto-pergunta-${i + 1}`).value;
         corPergunta[i] = document.querySelector(`.cor-fundo-pergunta-${i + 1}`).value;
@@ -227,8 +241,82 @@ function validaPerguntas() {
         insereNiveis();
     } else {
         alert("Preencha os dados corretamente");
-        }
-
-    console.log(textoPergunta,corPergunta,respostaCorreta,respostaIncorreta1,respostaIncorreta2,respostaIncorreta3, urlResposta)
-
     }
+}
+
+let quizzPronto = {};
+
+function finalizaQuizz(){
+    
+    quizzPronto = {
+        title: titulo,
+        image: imagemQuizz,
+        questions: [
+            { 
+                title: "Título da pergunta 1",
+                color: "#123456",
+                answers: [
+                    {
+                        text: "Texto da resposta 1",
+                        image: "https://http.cat/411.jpg",
+                        isCorrectAnswer: true
+                    },
+                    {
+                        text: "Texto da resposta 2",
+                        image: "https://http.cat/412.jpg",
+                        isCorrectAnswer: false
+                    }
+                ]
+            },
+            {
+                title: "Título da pergunta 2",
+                color: "#123456",
+                answers: [
+                    {
+                        text: "Texto da resposta 1",
+                        image: "https://http.cat/411.jpg",
+                        isCorrectAnswer: true
+                    },
+                    {
+                        text: "Texto da resposta 2",
+                        image: "https://http.cat/412.jpg",
+                        isCorrectAnswer: false
+                    }
+                ]
+            },
+            {
+                title: "Título da pergunta 3",
+                color: "#123456",
+                answers: [
+                    {
+                        text: "Texto da resposta 1",
+                        image: "https://http.cat/411.jpg",
+                        isCorrectAnswer: true
+                    },
+                    {
+                        text: "Texto da resposta 2",
+                        image: "https://http.cat/412.jpg",
+                        isCorrectAnswer: false
+                    }
+                ]
+            }
+        ],
+        levels: []
+    }
+    
+    for(let i = 0; i < qtdNiveis; i++){
+        quizzPronto.levels.push(
+        {
+            title: tituloNivel[i],
+            image: imagens[i],
+            text: descricao[i],
+            minValue: porcentagens[i]
+        })
+    }
+}
+
+
+function enviarQuizz() {
+    /* axios.post("https://mock-api.driven.com.br/api/v6/buzzquizz/quizzes") */
+
+}    

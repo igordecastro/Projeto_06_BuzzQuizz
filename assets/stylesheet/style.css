@@ -45,7 +45,6 @@ header > h1 {
     text-align: center;
     align-items: center;
     flex-wrap: wrap;
-    width: 33%;
 }
 
 .nenhum-quizz button {
@@ -114,7 +113,7 @@ header > h1 {
 .plano-de-fundo{
     background-image: 
     linear-gradient(180deg,
-    rgba(255,255,255,0) 0%,
+    #ffffff00 0%,
     rgba(0,0,0,0.5) 65.1%,
     #000000 100%),
     url(https://super.abril.com.br/wp-content/uploads/2020/09/04-09_gato_SITE.jpg);
@@ -233,7 +232,8 @@ header > h1 {
 /*fim para tela de um quizz*/
 .criacao-informacoes,
 .criacao-niveis,
-.criacao-perguntas {
+.criacao-perguntas,
+.criacao-sucesso {
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -242,7 +242,8 @@ header > h1 {
 }
 
 .criacao-informacoes > h3,
-.criacao-niveis>h3 {
+.criacao-niveis>h3,
+.criacao-sucesso > h3 {
     font-size: 23px;
     font-weight: bold;
 }
@@ -284,7 +285,8 @@ header > h1 {
 
 .criacao-informacoes > button,
 .niveis > button,
-.seriePerguntas > button {
+.seriePerguntas > button,
+.criacao-sucesso > button {
     margin: 85px auto 50px auto;
     font-size: 21px;
     width: 368px;
@@ -329,6 +331,28 @@ header > h1 {
 
 .pergunta h3:nth-child(1) {
     margin-top: 27px;
+}
+
+.quizz-criado {
+    width: 500px;
+    height: 266px;
+    color: white;
+    margin: 46px auto;
+}
+
+.nome-quizz-criado {
+    margin: 220px 0 0 18px;
+    display: flex;
+    align-items: center;
+    color: #FFFFFF;
+    font-weight: 400;
+    font-size: 23px;
+    overflow: hidden;
+}
+
+.criacao-sucesso > p {
+    color: #818181;
+    font-size: 21px;
 }
 
 .escondido {
