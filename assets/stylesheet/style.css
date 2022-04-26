@@ -16,6 +16,7 @@ header {
     left: 0;
     top: 0;
     height: 69px;
+    z-index: 1;
 }
 
 header > h1 {
@@ -230,7 +231,9 @@ header > h1 {
         margin-left: 390.93px;
     }
 /*fim para tela de um quizz*/
-.criacao-informacoes {
+.criacao-informacoes,
+.criacao-niveis,
+.criacao-perguntas {
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -238,7 +241,8 @@ header > h1 {
     margin-top: 140px;
 }
 
-.criacao-informacoes > h3 {
+.criacao-informacoes > h3,
+.criacao-niveis>h3 {
     font-size: 23px;
     font-weight: bold;
 }
@@ -255,8 +259,11 @@ header > h1 {
     height: 256px;
 }
 
-.perguntas-basicas > input {
-    margin-bottom: 9px;
+.perguntas-basicas > input,
+.pergunta > input,
+.nivel > input {
+    padding-left: 15px;
+    margin-bottom: 14px;
     width: 564px;
     height: 46px;
     border-radius: 5px;
@@ -266,21 +273,62 @@ header > h1 {
 .perguntas-basicas > input:last-child{
     margin-bottom: 0;
 }
-.perguntas-basicas > input::placeholder{
+.perguntas-basicas > input::placeholder,
+.nivel>input::placeholder,
+.pergunta>input::placeholder{
     font-style: italic;
     font-size: 19px;
     margin-left: 23px;
     color: #BABABA;
 }
 
-.criacao-informacoes > button {
-    margin: 85px auto 0 auto;
+.criacao-informacoes > button,
+.niveis > button,
+.seriePerguntas > button {
+    margin: 85px auto 50px auto;
     font-size: 21px;
     width: 368px;
     height: 54px;
     background-color: #EC362D;
     color: #FFFFFF;
     border-radius: 15px;
+}
+
+.nivel, 
+.pergunta {
+    background-color: #FFFFFF;
+    margin: 0 auto 22px auto;
+    width: 600px;
+    min-height: 74px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.niveis h3 {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 27px 0 12px 17px;
+    left: 10px;
+    position: absolute;
+}
+
+.niveis:nth-child(2) {
+    margin-top: 43px;
+}
+
+.nivel>input:nth-child(2){
+    margin-top: 62px;
+}
+
+.pergunta h3 {
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+
+.pergunta h3:nth-child(1) {
+    margin-top: 27px;
 }
 
 .escondido {
