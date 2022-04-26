@@ -97,13 +97,23 @@ function dadosnocss(meusdados){
     //parte 1 - adicionando dados na lista de quizzes
     for(let i=0;i<=6;i++){
     let ndado = Object.assign({},array[i]);//transformando minha array num objeto
-    console.log(ndado);
     const nomedomeuquizz = document.querySelector(".nomedoquizz");
     nomedomeuquizz.innerHTML = ndado.title;
     const fotodomeuquizz  = document.querySelector(".plano-de-fundo");
-    fotodomeuquizz.src = ndado.image;    
-    } 
-    }    
-    //parte 2 - adicionando dados na página de um quizz
+    fotodomeuquizz.src = ndado.image;
+
+    //Aqui começa a alterar elementos da página2  
+    const titulo = document.querySelector(".titulo");
+    titulo.innerHTML = ndado.title;
+    const pergunta = document.querySelector(".perguntas-texto");
+    pergunta.innerHTML = ndado.questions.title;
+    const imagem= document.querySelector(".resposta-imagem");
+    imagem.src =ndado.questions.answers.image; 
+    const resposta= document.querySelector(".resposta-texto");
+    resposta.innerHTML = ndado.questions.answers.text;
+    }
+     //parte 2 - adicionando dados na página de um quizz 
+    }       
 //FIM DA FUNÇÃO QUE ARMAZENA DADOS NO CSS
+
 dadosnaarray();
