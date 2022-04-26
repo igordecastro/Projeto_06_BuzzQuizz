@@ -69,3 +69,41 @@ function validaCriacao() {
         alert("Preencha os dados corretamente");
     }
 }
+let array = [];//variavel global que armazena meus dados numa array;
+
+//FUNÇÃO QUE ARMAZENA MEUS DADOS NUMA ARRAY
+function dadosnaarray(){
+    let promise=axios.get("https://mock-api.driven.com.br/api/v6/buzzquizz/quizzes");
+    promise.then(processarresposta);
+    function processarresposta(resposta){
+     array=resposta.data;
+     embaralhararray();
+     console.log(array);
+     dadosnocss();
+    }
+}
+//FIM DA FUNÇÃO QUE ARMAZENA MEUS DADOS NUMA ARRAY
+
+//FUNÇÃO QUE EMBARLHA MINHA ARRAY
+function embaralhararray(){    
+    function comparador() { 
+        return Math.random() - 0.5;} 
+        array.sort(comparador);   
+    }  
+//FIM DE UMA FUNÇÃO QUE EMBARALHA MINHA ARRAY
+
+//FUNÇÃO QUE ARMAZENA DADOS NO CSS
+function dadosnocss(meusdados){
+    //parte 1 - adicionando dados na lista de quizzes
+    for(let i=0;i<=6;i++){
+    let ndado = Object.assign({},array[i]);//transformando minha array num objeto
+    console.log(ndado);
+    const nomedomeuquizz = document.querySelector(".nomedoquizz");
+    nomedomeuquizz.innerHTML = ndado.title;
+    const fotodomeuquizz  = document.querySelector(".plano-de-fundo");
+    fotodomeuquizz.src = ndado.image;    
+    } 
+    }    
+    //parte 2 - adicionando dados na página de um quizz
+//FIM DA FUNÇÃO QUE ARMAZENA DADOS NO CSS
+dadosnaarray();
