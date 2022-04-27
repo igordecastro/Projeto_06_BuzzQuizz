@@ -20,7 +20,7 @@
     </header>
     <!-- DIV PARA ESPAÇO SEM QUIZZ DO USUÁRIO E BOTÃO MAIOR DE CRIAÇÃO-->
     <div class="nenhum-quizz">
-        <p>Você não criou nenhum quizz ainda :(</p>
+        <p>Você não criou nenhum <br>quizz ainda :(</p>
         <button onclick="criarQuizz()">Criar quizz</button>
     </div>
     <!-- FIM DIV SEM QUIZZ -->
@@ -33,7 +33,7 @@
     </div>
     <!-- FIM DA DIV PARA QUIZZES DO USUÁRIO -->
     <!--LISTA DE QUIZZES-->
-    <div class="listadequizzes">
+    <div class="listadequizzes escondido">
         <div class="titulo-quizzes">Todos os Quizzes</div>
         <div class="disposicao-linha">
         <div class="dimensoes-quizzes" onclick="mudar_pagina()"><img class="plano-de-fundo" src=""/><div class="nomedoquizz"></div></div>
@@ -66,7 +66,6 @@
             <div class="resposta-texto"></div>
         </div>
     </div>
-
     <!--Fim da Tela 2: Página de um quizz-->
     <!-- PRIMEIRA PÁGINA DE CRIAÇÃO DO QUIZZ --> 
     <div class="criacao-informacoes escondido">
@@ -82,6 +81,33 @@
         
     </div>
     <!-- FIM DA PRIMEIRA PAGINA DE CRIAÇÃO DO QUIZZ -->
+    <!-- PAGINA DE CRIAÇÃO DAS PERGUNTAS DO QUIZZ -->
+    <div class="criacao-perguntas escondido">
+        <div class="seriePerguntas">
+            
+        </div>
+    </div>
+    <!-- FIM DA PAGINA DE CRIAÇÃO DAS PERGUNTAS DO QUIZZ -->
+    <!-- PAGINA DE CRIAÇÃO DOS NIVEIS  -->
+    <div class="criacao-niveis escondido">
+        <h3>Agora, decida os níveis</h3>
+        <div class="niveis">
+
+        </div>
+    </div>
+    <!-- FIM DA PAGINA DE CRIAÇÃO DOS NIVEIS  -->
+    <!-- PÁGINA DE SUCESSO CRIAÇÃO -->
+    <div class="criacao-sucesso">
+        <h3>Seu quizz está pronto!</h3>
+        <div onclick="acessaQuizz()" class="quizz-criado plano-de-fundo">
+            <div class="nome-quizz-criado">
+                Nome do quizz
+            </div>
+        </div>
+        <button onclick="acessaQuizz()">Acessar Quizz</button>
+        <p onclick="voltarHome()">Voltar pra home</p>
+    </div>
+    <!-- FIM DA PÁGINA DE SUCESSO CRIAÇÃO -->
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
